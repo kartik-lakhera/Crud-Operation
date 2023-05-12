@@ -1,0 +1,31 @@
+<mat-icon class="design" (click)="close()">close</mat-icon>
+
+<form [formGroup]="createUser">
+  <!-- email -->
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Email" formControlName="name" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <!-- father name -->
+    <mat-form-field appearance="outline">
+      <mat-label>Father Name</mat-label>
+      <input matInput formControlName="fatherName" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <!-- mother name -->
+    <mat-form-field appearance="outline">
+      <mat-label>Mother Name</mat-label>
+      <input matInput formControlName="motherName" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <button mat-button color="primary" (click)="submitForm()">Submit</button>
+  </div>
+</form>

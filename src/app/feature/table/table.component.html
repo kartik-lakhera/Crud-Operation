@@ -1,0 +1,45 @@
+<button mat-raised-button color="primary" (click)="openDialog()">
+  Add More
+</button>
+
+<input (keyup)="applyFilter($event)" placeholder="Filter by values" />
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>No.</th>
+    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="fatherName">
+    <th mat-header-cell *matHeaderCellDef>Father Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.fatherName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="motherName">
+    <th mat-header-cell *matHeaderCellDef>Mother Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.motherName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Action Button</th>
+    <td mat-cell *matCellDef="let element">
+      <mat-icon (click)="updateData(element)">edit</mat-icon>
+      <mat-icon (click)="deleteData(element)">delete</mat-icon>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+
+<!-- <a routerLink="/feature2"
+  ><button class="btn btn-success pull-right">Feature 2</button></a
+>
+<a routerLink="/feature3"
+  ><button class="btn btn-success pull-right">Feature 3</button></a
+> -->

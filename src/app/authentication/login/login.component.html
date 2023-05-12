@@ -1,0 +1,20 @@
+<form [formGroup]="loginForm">
+  <!-- email -->
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter Your Email</mat-label>
+      <input matInput placeholder="Email" formControlName="email" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <!-- password -->
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your password</mat-label>
+      <input matInput formControlName="password" />
+    </mat-form-field>
+  </div>
+
+  <button mat-button color="primary" (click)="submitData()">Submit</button>
+  <button mat-button color="warn" (click)="resetData()">Reset</button>
+</form>
